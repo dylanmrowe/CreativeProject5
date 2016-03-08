@@ -61,7 +61,19 @@ function mainCtrl ($scope, pokemonFetcher) {
             console.log(data.sprites.front_default);
             console.log(data.forms);
             console.log(data.forms);
-            $("#result").append("<p>"+data.name+"</p>"+"<img src="+data.sprites.front_default+">"+"<img src=sprites.pokecheck.org/i/006.gif>");
+            $("#result").append("<p>"+data.name+"</p>");
+	    if(data.id < 10){
+               $("#result").append("<img src=http://sprites.pokecheck.org/i/00"+data.id+".gif>");
+	    }
+	    else if(data.id < 100){
+               $("#result").append("<img src=http://sprites.pokecheck.org/i/0"+data.id+".gif>");
+	    }
+	    else{
+               $("#result").append("<img src=http://sprites.pokecheck.org/i/"+data.id+".gif>");
+	    }
+	    
+	    
+	    
           }
        });
       });
